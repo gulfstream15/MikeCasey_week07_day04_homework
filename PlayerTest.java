@@ -8,7 +8,14 @@ public class PlayerTest {
   public void canGetPlayerName() {
     Hand hand = new Hand();
     Player player = new Player("Mike", hand);
-    assertEquals("Mike", player.getPlayerName());
+    assertEquals("Mike", player.getName());
   }  
-  
+
+  @Test
+  public void playerHasHand() {
+    Hand hand = new Hand();
+    Player player = new Player("Mike", hand);
+    assertNotNull(hand);
+  }
+
 }
