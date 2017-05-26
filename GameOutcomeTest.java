@@ -2,7 +2,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import org.junit.*;
 
-public class CalculateWinnerTest {
+public class GameOutcomeTest {
 
   Hand hand1 = new Hand();
   Hand hand2 = new Hand();
@@ -12,26 +12,28 @@ public class CalculateWinnerTest {
 
   @Test
   public void playerOneExists() {
-    CalculateWinner calcwin = new CalculateWinner(player1, player2);
+    GameOutcome calcwin = new GameOutcome(player1, player2);
     assertNotNull(calcwin.getPlayerOne());
   }
 
   @Test
   public void playerTwoExists() {
-    CalculateWinner calcwin = new CalculateWinner(player1, player2);
+    GameOutcome calcwin = new GameOutcome(player1, player2);
     assertNotNull(calcwin.getPlayerTwo());
   }
 
   @Test
   public void playerOneHandExists() {
-    CalculateWinner calcwin = new CalculateWinner(player1, player2);
+    GameOutcome calcwin = new GameOutcome(player1, player2);
     assertNotNull(calcwin.getPlayerOneHand());
   }
 
   @Test
   public void playerTwoHandExists() {
-    CalculateWinner calcwin = new CalculateWinner(player1, player2);
+    GameOutcome calcwin = new GameOutcome(player1, player2);
     assertNotNull(calcwin.getPlayerTwoHand());
   }
+
+  
 
 }
