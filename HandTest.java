@@ -10,7 +10,7 @@ public class HandTest {
 
   @Before
   public void before() {
-    hand = new Hand ("Mike"); 
+    hand = new Hand (); 
     deck = new Deck();
     card = new Card(); 
   }
@@ -20,11 +20,6 @@ public class HandTest {
   //   public void handStartsEmpty() {
   //   assertEquals(0, hand.numberOfCards());
   // }
-
-  @Test
-  public void playerName() {
-    assertEquals("Mike", hand.getPlayerName());
-  }
 
   @Test
   public void handHasSize() {

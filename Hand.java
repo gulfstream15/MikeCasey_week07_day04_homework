@@ -3,27 +3,18 @@ import java.util.ArrayList;
 public class Hand {
   
   private ArrayList<Card> cardsInHand;
-  private String playerName;  
   private int cardValue;
   private Suit suit;
   private Rank rank;
   private int handValue;
 
   Deck deck = new Deck();
-
-  public Hand() {
-
-  }
-
-  // It is better to seperate out the playerName
-  // into a seperate class
  
-  public Hand(String playerName) {
+  public Hand() {
     this.cardsInHand = new ArrayList<Card>();
-    this.playerName =  playerName; 
     this.cardValue  = cardValue;
-    this.suit   = suit;
-    this.rank   = rank;
+    this.suit = suit;
+    this.rank = rank;
     this.handValue  = handValue;
   }
 
@@ -53,10 +44,6 @@ public class Hand {
       this.cardValue = card.getValue(rank);
     }
   }
-
-  public void setPlayerName(String newPlayer) {
-     this.playerName = playerName;
-  }
  
   public Suit getCardSuit() {
     return this.suit;  
@@ -68,10 +55,6 @@ public class Hand {
 
   public int getCardValue() {
     return this.cardValue;  
-  }
-  
-  public String getPlayerName() {
-    return this.playerName;  
   }
   
 }
