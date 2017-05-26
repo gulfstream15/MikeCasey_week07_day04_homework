@@ -38,16 +38,16 @@ public class HandTest {
   public void cardHasSuit() {
     hand.addCardToHandFromDeck();
     hand.setCardDetails();
-    String cardSuit = hand.getCardSuit();
-    assertNotNull(cardSuit);
+    Suit suit = hand.getCardSuit();
+    assertNotNull(suit);
   }
 
   @Test
   public void cardHasRank() {
     hand.addCardToHandFromDeck();
     hand.setCardDetails();
-    String cardRank = hand.getCardRank();
-    assertNotNull(cardRank);
+    Rank rank = hand.getCardRank();
+    assertNotNull(rank);
   }
 
   @Test

@@ -5,8 +5,8 @@ public class Hand {
   private ArrayList<Card> cardsInHand;
   private String playerName;  
   private int cardValue;
-  private String cardSuit;
-  private String cardRank;
+  private Suit suit;
+  private Rank rank;
   private int handValue;
 
   Deck deck = new Deck();
@@ -22,8 +22,8 @@ public class Hand {
     this.cardsInHand = new ArrayList<Card>();
     this.playerName =  playerName; 
     this.cardValue  = cardValue;
-    this.cardSuit   = cardSuit;
-    this.cardRank   = cardRank;
+    this.suit   = suit;
+    this.rank   = rank;
     this.handValue  = handValue;
   }
 
@@ -48,9 +48,9 @@ public class Hand {
 
   public void setCardDetails() {
     for (Card card:cardsInHand) {
-      this.cardSuit = card.getSuit();
-      this.cardRank = card.getRank();
-      this.cardValue = card.getValue(cardRank);
+      this.suit = card.getSuit();
+      this.rank = card.getRank();
+      this.cardValue = card.getValue(rank);
     }
   }
 
@@ -58,12 +58,12 @@ public class Hand {
      this.playerName = playerName;
   }
  
-  public String getCardSuit() {
-    return this.cardSuit;  
+  public Suit getCardSuit() {
+    return this.suit;  
   }
 
-  public String getCardRank() {
-    return this.cardRank;  
+  public Rank getCardRank() {
+    return this.rank;  
   }
 
   public int getCardValue() {

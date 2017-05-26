@@ -3,8 +3,8 @@ import java.util.Random;
 
 public class Deck {
 
-  private CardSuit suit;
-  private CardRank rank;
+  private Suit suit;
+  private Rank rank;
   private ArrayList<Card> deck;
   private Random randomGenerator = new Random();
  
@@ -18,9 +18,9 @@ public class Deck {
   }
 
   public void createDeck(){
-    for (CardSuit suit : CardSuit.values()) {
-      for (CardRank rank : CardRank.values()) {
-         deck.add( new Card(rank.toString(), suit.toString()) );
+    for (Suit suit : Suit.values()) {
+      for (Rank rank : Rank.values()) {
+         deck.add( new Card(suit, rank));
       }
     }
   }
