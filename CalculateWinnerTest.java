@@ -22,4 +22,16 @@ public class CalculateWinnerTest {
     assertNotNull(calcwin.getPlayerTwo());
   }
 
+  @Test
+  public void playerOneHandExists() {
+    CalculateWinner calcwin = new CalculateWinner(player1, player2);
+    assertNotNull(calcwin.getPlayerOneHand());
+  }
+
+  @Test
+  public void playerTwoHandExists() {
+    CalculateWinner calcwin = new CalculateWinner(player1, player2);
+    assertNotNull(calcwin.getPlayerTwoHand());
+  }
+
 }

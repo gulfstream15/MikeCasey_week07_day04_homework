@@ -19,7 +19,18 @@ public class CalculateWinner {
     return this.player2;
   }
 
-  
+  public Hand getPlayerOneHand() {
+    return this.player1.getHand();
+  }
+
+  public Hand getPlayerTwoHand() {
+    return this.player2.getHand();
+  }
+
+  // public Player getWinner(Player player1, Player player2) {
+  //   hand1 = player1.getHand();
+    
+  // }
 
 }
 
