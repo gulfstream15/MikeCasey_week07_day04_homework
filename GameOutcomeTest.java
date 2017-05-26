@@ -34,6 +34,9 @@ public class GameOutcomeTest {
     assertNotNull(calcwin.getPlayerTwoHand());
   }
 
-  
+  @Test
+  public void hasWinningPlayer() {
+    
+  }
 
 }

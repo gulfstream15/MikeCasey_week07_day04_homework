@@ -15,24 +15,24 @@ public class HandTest {
     card = new Card(); 
   }
 
-  // An empty test is worth having here
-  // @Test
-  //   public void handStartsEmpty() {
-  //   assertEquals(0, hand.numberOfCards());
-  // }
+  @Test
+    public void handStartsEmpty() {
+    assertEquals(0, hand.getHandSize());
+  }
 
   @Test
   public void handHasSize() {
     deck = new Deck();
     hand.addCardToHandFromDeck();
-    int handSize = hand.HandSize();
+    hand.SetHandDetails();
+    int handSize = hand.getHandSize();
     assertNotNull(handSize); 
   }
 
   @Test
   public void cardHasSuit() {
     hand.addCardToHandFromDeck();
-    hand.setCardDetails();
+    hand.SetHandDetails();
     Suit suit = hand.getCardSuit();
     assertNotNull(suit);
   }
@@ -40,7 +40,7 @@ public class HandTest {
   @Test
   public void cardHasRank() {
     hand.addCardToHandFromDeck();
-    hand.setCardDetails();
+    hand.SetHandDetails();
     Rank rank = hand.getCardRank();
     assertNotNull(rank);
   }
@@ -48,9 +48,20 @@ public class HandTest {
   @Test
   public void cardHasValue() {
     hand.addCardToHandFromDeck();
-    hand.setCardDetails();
+    hand.SetHandDetails();
     int cardValue = hand.getCardValue();
     assertNotNull(cardValue); 
   }
+
+  @Test
+  public void handHasValue() {
+    hand.addCardToHandFromDeck();
+    hand.addCardToHandFromDeck();
+    hand.addCardToHandFromDeck();
+    hand.SetHandDetails();
+    int handValue = hand.getHandValue();
+    assertNotNull(handValue); 
+  }
+
 
 }

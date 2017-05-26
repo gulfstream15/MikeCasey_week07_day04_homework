@@ -30,7 +30,7 @@ public class GameOutcome {
     return this.player2.getHand();
   }
 
-  public Player getWinner(Player player1, Player player2) {
+  public String getOutcome(Player player1, Player player2) {
     hand1 = player1.getHand();
     hand2 = player1.getHand();
 
@@ -41,9 +41,9 @@ public class GameOutcome {
     cardValuePlayer2 = hand2.getCardValue();
 
     if (cardValuePlayer1 > cardValuePlayer2) {
-      return player1;
-    } else
-      return player2;
+      return player1.getName();
+    } else if ()
+      return player2.getName();
   }
 
   public String getWinnersName(Player player1, Player player2) {
