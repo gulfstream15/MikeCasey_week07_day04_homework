@@ -12,31 +12,31 @@ public class GameOutcomeTest {
 
   @Test
   public void playerOneExists() {
-    GameOutcome calcwin = new GameOutcome(player1, player2);
-    assertNotNull(calcwin.getPlayerOne());
+    GameOutcome outcome = new GameOutcome(player1, player2);
+    assertNotNull(outcome.getPlayerOne());
   }
 
   @Test
   public void playerTwoExists() {
-    GameOutcome calcwin = new GameOutcome(player1, player2);
-    assertNotNull(calcwin.getPlayerTwo());
+    GameOutcome outcome = new GameOutcome(player1, player2);
+    assertNotNull(outcome.getPlayerTwo());
   }
 
   @Test
   public void playerOneHandExists() {
-    GameOutcome calcwin = new GameOutcome(player1, player2);
-    assertNotNull(calcwin.getPlayerOneHand());
+    GameOutcome outcome = new GameOutcome(player1, player2);
+    assertNotNull(outcome.getPlayerOneHand());
   }
 
   @Test
   public void playerTwoHandExists() {
-    GameOutcome calcwin = new GameOutcome(player1, player2);
-    assertNotNull(calcwin.getPlayerTwoHand());
+    GameOutcome outcome = new GameOutcome(player1, player2);
+    assertNotNull(outcome.getPlayerTwoHand());
   }
 
   @Test
   public void hasWinningPlayer() {
-    
+
   }
 
 }

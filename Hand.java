@@ -13,9 +13,9 @@ public class Hand {
  
   public Hand() {
     this.cardsInHand = new ArrayList<Card>();
-    this.cardValue  = cardValue;
     this.suit = suit;
     this.rank = rank;
+    this.cardValue  = cardValue;
     this.handValue  = handValue;
     this.handSize = handSize;
   }
@@ -27,7 +27,7 @@ public class Hand {
 
   public int getHandSize() {
     this.handSize = cardsInHand.size();
-    // System.out.println("handsize in class is: " +this.handSize);
+    System.out.println("handsize in class is: " +this.handSize);
     return this.handSize;
   }
 
@@ -43,6 +43,24 @@ public class Hand {
       this.handValue = this.handValue + this.cardValue;
     }
     // System.out.println("handValue in class is: " +this.handValue);
+  }
+
+  public void buildHand() {
+    this.handValue = 0;
+    Card newCard = deck.dealRandomCard();
+    this.cardsInHand.add(newCard); 
+    System.out.println("in calcHandValue method: ");
+    for (Card card:cardsInHand) {
+      this.suit = card.getSuit();
+      System.out.println("suit in class is: " +this.suit);
+      this.rank = card.getRank();
+      System.out.println("rank in class is: " +this.rank);
+      this.cardValue = card.getValue(rank);
+      System.out.println("cardValue in class is: " +this.cardValue);
+      this.handValue = this.handValue + this.cardValue;
+    }
+    System.out.println("handValue in class is: " +this.handValue);
+    System.out.println("*************Card Added to Hand**************** ");
   }
  
   public Suit getCardSuit() {
