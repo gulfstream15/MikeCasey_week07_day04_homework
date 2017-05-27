@@ -1,7 +1,11 @@
 public class GameOutcome {
 
-  private int cardValuePlayer1;
-  private int cardValuePlayer2;
+  private int player1HandOldValue;
+  private int player1HandNewValue;
+  private int player2HandOldValue;
+  private int player2HandNewValue;
+
+  private String outcome;
 
   Hand hand1 = new Hand();
   Hand hand2 = new Hand();
@@ -14,62 +18,56 @@ public class GameOutcome {
      this.player2 = player2;
   }
 
-  public Player getPlayerOne() {
+  public Player getPlayer1() {
     return this.player1;
   }
 
-  public Player getPlayerTwo() {
+  public Player getPlayer2() {
     return this.player2;
   }
 
-  public Hand getPlayerOneHand() {
+  public Hand getPlayer1Hand() {
     return this.player1.getHand();
   }
 
-  public Hand getPlayerTwoHand() {
+  public Hand getPlayer2Hand() {
     return this.player2.getHand();
   }
 
-  // Logic needs redoing here!!!
-  public String getOutcome(Player player1, Player player2) {
-
-    // give player a hand first??
-    // or generate a hand in hand class and give to player??
-    // get the hand for a player?
-
-      // ⁃ public void player1HasHigherScore_returnsPlayer1() {
-      //                  PlayerComparison playerComparison = new PlayerComparison();
-      //                         Player player1  = new Player(“1”, new Hand());
-      //                         Player player2  = new Player(“2”, new Hand());
-      //                         player1.getHand().addCard(new Card(Suit.SPADES, Value.TWO);
-      //                         player2.getHand().addCard(new Card(Suit.CLUBS, Value.ACE);
-      //                         Player winner = playerComparison.compare(player1, player2);
-      //                         assertEquals(player1, player2);
-      //                     }
-
-
-    hand1 = hand.buildHand();
-    Player player1  = new Player(“Mike”, hand1);
-
-    hand2 = hand.buildHand();
-    Player player2  = new Player(“Bob”, hand2);
-
-    hand1 = player1.getHand();
-    hand2 = player1.getHand(); 
-    
-    cardValuePlayer1 = hand1.getCardValue();
-    cardValuePlayer2 = hand2.getCardValue();
-
-    if (cardValuePlayer1 > cardValuePlayer2) {
-      return player1.getName();
-    } else if ()
-      return player2.getName();
+  public int dealPlayer1Card() {
+    hand1.buildHand();
+    Player player1  = new Player("Mike", hand1);
+    // System.out.println("in GameOutcome class player1Hand OldValue is: " +player1HandOldValue);
+    player1HandNewValue = player1HandOldValue + hand1.getCardValue();
+    // System.out.println("in GameOutcome class player1HandNewValue is: " +player1HandNewValue);
+    player1HandOldValue = player1HandNewValue;
+    return player1HandNewValue;
   }
 
-  // Outcome here not winner OR draw
-  public String getWinnersName(Player player1, Player player2) {
-    Player playerwin = getWinner(player1, player2);
-    return playerwin.getName();
+  public int dealPlayer2Card() {
+    hand2.buildHand();
+    Player player2 = new Player("Bob", hand2);
+    // System.out.println("in GameOutcome class player2HandOldValue is: " +player2HandOldValue);
+    player2HandNewValue = player2HandOldValue + hand2.getCardValue();
+    // System.out.println("in GameOutcome class player2HandNewValue is: " +player2HandNewValue);
+    player2HandOldValue = player2HandNewValue;
+    return player2HandNewValue;
+  }
+
+  public String getOutcome(int player1HandNewValue, int player2HandNewValue) {
+    System.out.println("in getOutcome method player1HandNewValue is: " +player1HandNewValue);
+    System.out.println("in getOutcome method player2HandNewValue is: " +player2HandNewValue);
+
+    if (player1HandNewValue > player2HandNewValue) {
+      outcome = "Winner is: " + player1.getName();
+      return outcome;
+    } else if (player2HandNewValue > player1HandNewValue) {
+      outcome = "Winner is: " + player2.getName();
+      return outcome;
+    } else {
+      outcome = "It's a draw";
+      return outcome;
+    }
   }
 
 }
