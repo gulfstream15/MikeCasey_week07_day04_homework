@@ -60,17 +60,21 @@ public class GameResult {
   }
 
   public String getResult(int player1HandNewValue, int player2HandNewValue) {
+    System.out.println("****** Result after deals ******");
+    System.out.println(player1.getName() + "'s hand value is:" +player1HandNewValue);
+    System.out.println(player2.getName() + "'s hand value is:" +player2HandNewValue);
     if (player1HandNewValue > player2HandNewValue) {
-      result = "Winner: " + player1.getName();
-      return result;
+        result = player1.getName() + " is the winner";
+        return result;
     } else if (player2HandNewValue > player1HandNewValue) {
-      result = "Winner: " + player2.getName();
-      return result;
+        result = player2.getName() + " is the winner";
+        return result;
     } else {
-      result = "It's a draw";
-      return result;
+        result = "It's a draw";
+        return result;
     }
- }
+  }
+
 
 }
 
