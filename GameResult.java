@@ -1,11 +1,11 @@
-public class GameOutcome {
+public class GameResult {
 
   private int player1HandOldValue;
   private int player1HandNewValue;
   private int player2HandOldValue;
   private int player2HandNewValue;
 
-  private String outcome;
+  private String result;
 
   Hand hand1 = new Hand();
   Hand hand2 = new Hand();
@@ -13,7 +13,7 @@ public class GameOutcome {
   Player player1  = new Player("Mike", hand1);
   Player player2  = new Player("Bob", hand2);
 
-  public GameOutcome(Player player1, Player player2) {
+  public GameResult(Player player1, Player player2) {
      this.player1 = player1;
      this.player2 = player2;
   }
@@ -50,16 +50,16 @@ public class GameOutcome {
     return player2HandNewValue;
   }
 
-  public String getOutcome(int player1HandNewValue, int player2HandNewValue) {
+  public String getResult(int player1HandNewValue, int player2HandNewValue) {
     if (player1HandNewValue > player2HandNewValue) {
-      outcome = "Winner is: " + player1.getName();
-      return outcome;
+      result = "Winner is: " + player1.getName();
+      return result;
     } else if (player2HandNewValue > player1HandNewValue) {
-      outcome = "Winner is: " + player2.getName();
-      return outcome;
+      result = "Winner is: " + player2.getName();
+      return result;
     } else {
-      outcome = "It's a draw";
-      return outcome;
+      result = "It's a draw";
+      return result;
     }
   }
 
