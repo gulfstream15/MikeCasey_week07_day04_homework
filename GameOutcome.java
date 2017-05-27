@@ -46,13 +46,16 @@ public class GameOutcome {
       //                         Player winner = playerComparison.compare(player1, player2);
       //                         assertEquals(player1, player2);
       //                     }
-  
+
+
+    hand1 = hand.buildHand();
+    Player player1  = new Player(“Mike”, hand1);
+
+    hand2 = hand.buildHand();
+    Player player2  = new Player(“Bob”, hand2);
 
     hand1 = player1.getHand();
-    hand2 = player1.getHand();
-
-    hand1.addCardToHandFromDeck();
-    hand2.addCardToHandFromDeck(); 
+    hand2 = player1.getHand(); 
     
     cardValuePlayer1 = hand1.getCardValue();
     cardValuePlayer2 = hand2.getCardValue();
