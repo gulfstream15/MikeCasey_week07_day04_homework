@@ -16,7 +16,7 @@ public class GameResultTest {
     assertNotNull(result.getPlayer1());
   }
 
-  @Test 
+  @Test
   public void player2Exists() {
     GameResult result = new GameResult(player1, player2);
     assertNotNull(result.getPlayer2());
@@ -45,6 +45,7 @@ public class GameResultTest {
     int valuePlayer1AfterHand2 = result.dealPlayer1Card();
     int valuePlayer2AfterHand2 = result.dealPlayer2Card();
     String outcome = result.getResult(valuePlayer1AfterHand2, valuePlayer2AfterHand2);
+    System.out.println("Outcome: " +outcome);
     assertNotNull(outcome);
   }
 
