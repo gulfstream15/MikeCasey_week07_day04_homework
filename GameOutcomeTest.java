@@ -45,7 +45,6 @@ public class GameOutcomeTest {
     int valuePlayer1AfterHand2 = gameOutcome.dealPlayer1Card();
     int valuePlayer2AfterHand2 = gameOutcome.dealPlayer2Card();
     String outcome = gameOutcome.getOutcome(valuePlayer1AfterHand2, valuePlayer2AfterHand2);
-    System.out.println("Outcome is: " +outcome);
     assertNotNull(outcome);
   }
 
