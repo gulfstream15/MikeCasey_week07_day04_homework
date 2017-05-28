@@ -1,4 +1,4 @@
-public class GameResult {
+public class Game {
 
   private int player1HandOldValue;
   private int player1HandNewValue;
@@ -16,7 +16,7 @@ public class GameResult {
   Player player1  = new Player("Mike", hand1);
   Player player2  = new Player("Bob", hand2);
 
-  public GameResult(Player player1, Player player2) {
+  public Game(Player player1, Player player2) {
     this.player1 = player1;
     this.player2 = player2;
   }
