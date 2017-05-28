@@ -27,11 +27,8 @@ public class Hand {
     this.cardsInHand.add(newCard);
     for (Card card:cardsInHand) {
        this.suit = card.getSuit();
-       System.out.println("Suit of card added is: "+this.suit);
        this.rank = card.getRank();
-       System.out.println("Rank of card added is: "+this.rank);
        this.cardValue = card.getValue(rank);
-       System.out.println("Value of card added is: "+this.cardValue);
        this.handValue = this.handValue + this.cardValue;
     }
   }
@@ -55,6 +52,10 @@ public class Hand {
   public int getHandSize() {
     this.handSize = cardsInHand.size();
     return this.handSize;
+  }
+
+  public ArrayList<Card> getCardsInHand() {
+    return this.cardsInHand;
   }
   
 }
