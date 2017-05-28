@@ -9,12 +9,15 @@ public class Game {
   private String player2Name;
 
   private String result;
+  private String resultMessage;
 
   Hand hand1 = new Hand();
   Hand hand2 = new Hand();
 
   Player player1  = new Player("Mike", hand1);
   Player player2  = new Player("Bob", hand2);
+
+  Rule rule = new Rule();
 
   public Game(Player player1, Player player2) {
     this.player1 = player1;
@@ -63,18 +66,16 @@ public class Game {
     System.out.println("****** Result after deals ******");
     System.out.println(player1.getName() + "'s hand value is:" +player1HandNewValue);
     System.out.println(player2.getName() + "'s hand value is:" +player2HandNewValue);
-    if (player1HandNewValue > player2HandNewValue) {
-        result = player1.getName() + " is the winner";
-        return result;
-    } else if (player2HandNewValue > player1HandNewValue) {
-        result = player2.getName() + " is the winner";
-        return result;
+    result = rule.getResult(player1HandNewValue, player2HandNewValue);
+    if (result == "Player1") {
+      resultMessage = player1.getName() + " is the winner";
+    } else if (result == "Player2") {
+      resultMessage = player2.getName() + " is the winner";
     } else {
-        result = "It's a draw";
-        return result;
-    }
+      resultMessage = "It's a draw";
+    }  
+    return resultMessage;
   }
-
 
 }
 
