@@ -80,8 +80,8 @@ public class MainActivity extends AppCompatActivity {
             hand1Details.add(player1CardDetails);
         }
 
-        for (String player1Cards: hand1Details) {
-            System.out.println("Player 1 card in hand is: "+player1Cards);
+        for (String player1Card: hand1Details) {
+            System.out.println("Player 1 card in hand is: "+player1Card);
         }
 
         textPlayer1LatestCard.setText("Player1 Last Card was: " + player1DealtCardRank + " of " + player1DealtCardSuit);
@@ -103,11 +103,12 @@ public class MainActivity extends AppCompatActivity {
             // System.out.println("Value of card already in hand is: "+ cardValue);
 
             player2CardDetails = rank + " of " + suit;
+
             hand2Details.add(player2CardDetails);
         }
 
-        for (String player2Cards: hand2Details) {
-            System.out.println("Player 2 card in hand is: "+player2Cards);
+        for (String player2Card: hand2Details) {
+            System.out.println("Player 2 card in hand is: "+player2Card);
         }
 
         // textPlayer2LatestCard.setText("Player2 Last Card was: " + player2DealtCardRank + " of " + player2DealtCardSuit);
