@@ -31,11 +31,8 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Card> player1Hand;
     private ArrayList<Card> player2Hand;
 
-    private ArrayList<String> hand1Details;
-    private ArrayList<String> hand2Details;
-
-    private String player1CardDetails;
-    private String player2CardDetails;
+    private String[] hand1Details;
+    private String[] hand2Details;
 
     TextView textPlayer1LatestCard;
     Button buttonPlayer1;
@@ -63,52 +60,25 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onPlayer1ButtonClick(View view) {
-        hand1Details = new ArrayList<String>();
         player1Hand = game.dealPlayer1Card();
         player1DealtCardRank = game.getplayer1DealtCardRank();
         player1DealtCardSuit = game.getplayer1DealtCardSuit();
-
         for (Card card:player1Hand) {
             Suit suit = card.getSuit();
-            // System.out.println("Suit of card already in hand is: "+suit);
+            System.out.println("Suit of card already in hand is: "+suit);
             Rank rank = card.getRank();
-            // System.out.println("Rank of card already in hand is: "+rank);
+            System.out.println("Rank of card already in hand is: "+rank);
             int cardValue = card.getValue(rank);
-            // System.out.println("Value of card already in hand is: "+ cardValue);
-
-            player1CardDetails = rank + " of " + suit;
-            hand1Details.add(player1CardDetails);
+            System.out.println("Value of card already in hand is: "+cardValue);
+            hand1Details = 
         }
-
-        for (String player1Cards: hand1Details) {
-            System.out.println("Card in hand is: "+player1Cards);
-        }
-
         textPlayer1LatestCard.setText("Player1 Last Card was: " + player1DealtCardRank + " of " + player1DealtCardSuit);
     }
 
     public void onPlayer2ButtonClick(View view) {
-        hand2Details = new ArrayList<String>();
         player2Hand = game.dealPlayer2Card();
         player2DealtCardRank = game.getplayer2DealtCardRank();
         player2DealtCardSuit = game.getplayer2DealtCardSuit();
-
-        for (Card card:player2Hand) {
-            Suit suit = card.getSuit();
-            // System.out.println("Suit of card already in hand is: "+suit);
-            Rank rank = card.getRank();
-            // System.out.println("Rank of card already in hand is: "+rank);
-            int cardValue = card.getValue(rank);
-            // System.out.println("Value of card already in hand is: "+ cardValue);
-
-            player2CardDetails = rank + " of " + suit;
-            hand2Details.add(player2CardDetails);
-        }
-
-        for (String player2Cards: hand2Details) {
-            System.out.println("Card in hand is: "+player2Cards);
-        }
-
         textPlayer2LatestCard.setText("Player2 Last Card was: " + player2DealtCardRank + " of " + player2DealtCardSuit);
     }
 
