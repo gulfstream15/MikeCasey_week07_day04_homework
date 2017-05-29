@@ -81,10 +81,11 @@ public class MainActivity extends AppCompatActivity {
         }
 
         for (String player1Cards: hand1Details) {
-            System.out.println("Card in hand is: "+player1Cards);
+            System.out.println("Player 1 card in hand is: "+player1Cards);
         }
 
         textPlayer1LatestCard.setText("Player1 Last Card was: " + player1DealtCardRank + " of " + player1DealtCardSuit);
+        textPlayer1LatestCard.setText("Player 1 hand details are: " + hand1Details);
     }
 
     public void onPlayer2ButtonClick(View view) {
@@ -106,17 +107,19 @@ public class MainActivity extends AppCompatActivity {
         }
 
         for (String player2Cards: hand2Details) {
-            System.out.println("Card in hand is: "+player2Cards);
+            System.out.println("Player 2 card in hand is: "+player2Cards);
         }
 
-        textPlayer2LatestCard.setText("Player2 Last Card was: " + player2DealtCardRank + " of " + player2DealtCardSuit);
+        // textPlayer2LatestCard.setText("Player2 Last Card was: " + player2DealtCardRank + " of " + player2DealtCardSuit);
+        textPlayer2LatestCard.setText("Player 2 hand details are: " + hand2Details);
+
     }
 
     public void onResultButtonClick(View view) {
         player1HandNewValue = game.getPlayer1HandNewValue();
         player2HandNewValue = game.getPlayer2HandNewValue();
         String outcome = game.getResult(player1HandNewValue, player2HandNewValue);
-        textResult.setText("Outcome: " + outcome + "Hand Value Player1: " + player1HandNewValue + "Hand Value Player2: " + player2HandNewValue);
+        textResult.setText("Outcome: " + outcome + " Hand Value Player1: " + player1HandNewValue + " Hand Value Player2: " + player2HandNewValue);
     }
 
 }
