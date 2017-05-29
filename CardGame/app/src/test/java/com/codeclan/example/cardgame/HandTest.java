@@ -4,6 +4,8 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.Assert.*;
 
 /**
@@ -13,13 +15,14 @@ import static org.junit.Assert.*;
 public class HandTest {
 
     Hand hand;
-    Deck deck;
     Card card;
+
+    ArrayList<Card> currentHand;
+    ArrayList<Card> nextHand;
 
     @Before
     public void before() {
         hand = new Hand ();
-        deck = new Deck();
         card = new Card();
     }
 
@@ -28,42 +31,40 @@ public class HandTest {
         assertEquals(0, hand.getHandSize());
     }
 
-    @Test @Ignore
+    @Test
     public void handHasSize() {
-        deck = new Deck();
-        hand.buildHand();
+        currentHand = hand.buildHand();
         int handSize = hand.getHandSize();
-        assertNotNull(handSize);
+        assertEquals(1, handSize);
     }
 
-    @Test @Ignore
+    @Test
     public void cardHasSuit() {
-        hand.buildHand();
+        currentHand = hand.buildHand();
         Suit suit = hand.getCardSuit();
         assertNotNull(suit);
     }
 
-    @Test @Ignore
+    @Test
     public void cardHasRank() {
-        hand.buildHand();
+        currentHand = hand.buildHand();
         Rank rank = hand.getCardRank();
         assertNotNull(rank);
     }
 
-    @Test @Ignore
+    @Test
     public void cardHasValue() {
-        hand.buildHand();
+        currentHand = hand.buildHand();
         int cardValue = hand.getCardValue();
         assertNotNull(cardValue);
     }
 
-    @Test @Ignore
-    public void handHasValue() {
-        hand.buildHand();
-        hand.buildHand();
+    @Test
+    public void handHasSizeTwoDeals() {
+        currentHand = hand.buildHand();
+        nextHand = hand.buildHand();
         int handSize = hand.getHandSize();
-        int handValue = hand.getHandValue();
-        assertNotNull(handValue);
+        assertEquals(2, handSize);
     }
 
 }

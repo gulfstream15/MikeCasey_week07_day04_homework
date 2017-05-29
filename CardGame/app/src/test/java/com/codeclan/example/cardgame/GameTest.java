@@ -9,10 +9,15 @@ import static org.junit.Assert.*;
  * Created by user on 27/05/2017.
  */
 
+import java.util.ArrayList;
+
 public class GameTest {
 
     Hand hand1 = new Hand();
     Hand hand2 = new Hand();
+
+    ArrayList<Card> player1Hand;
+    ArrayList<Card> player2Hand;
 
     Suit lastCardSuitPlayer1;
     Suit lastCardSuitPlayer2;
@@ -20,13 +25,13 @@ public class GameTest {
     Player player1  = new Player("Mike", hand1);
     Player player2  = new Player("Bob", hand2);
 
-    @Test
+    @Test @Ignore
     public void player1Exists() {
         Game game = new Game(player1, player2);
         assertNotNull(game.getPlayer1());
     }
 
-    @Test
+    @Test @Ignore
     public void player2Exists() {
         Game game = new Game(player1, player2);
         assertNotNull(game.getPlayer2());
@@ -35,46 +40,55 @@ public class GameTest {
     @Test @Ignore
     public void player1HandHasValue() {
         Game game = new Game(player1, player2);
-        int valuePlayer1Hand = game.dealPlayer1Card();
-        assertNotNull(valuePlayer1Hand);
+        player1Hand = game.dealPlayer1Card();
+        int player1HandNewValue = game.getPlayer1HandNewValue();
+        assertNotNull(player1HandNewValue);
     }
 
     @Test @Ignore
     public void player2HandHasValue() {
         Game game = new Game(player1, player2);
-        int valuePlayer2Hand = game.dealPlayer2Card();
-        assertNotNull(valuePlayer2Hand);
+        player2Hand = game.dealPlayer2Card();
+        int player2HandNewValue = game.getPlayer2HandNewValue();
+        assertNotNull(player2HandNewValue);
     }
 
     @Test @Ignore
     public void player1HandHasSize() {
-        // One player, three hands
         Game game = new Game(player1, player2);
-        int valuePlayer1AfterHand1 = game.dealPlayer1Card();
-        int valuePlayer1AfterHand2 = game.dealPlayer1Card();
-        int valuePlayer1AfterHand3 = game.dealPlayer1Card();
+        player1Hand = game.dealPlayer1Card();
         int getPlayer1HandSize = game.getPlayer1HandSize();
-        assertEquals(3, getPlayer1HandSize);
+        assertEquals(1, getPlayer1HandSize);
+    }
+
+    @Test @Ignore
+    public void player2HandHasSize() {
+        Game game = new Game(player1, player2);
+        player2Hand = game.dealPlayer2Card();
+        int getPlayer2HandSize = game.getPlayer2HandSize();
+        assertEquals(1, getPlayer2HandSize);
     }
 
     @Test
     public void gameHasResult() {
-        // Two players, two hands
         Game game = new Game(player1, player2);
-        int valuePlayer1AfterHand1 = game.dealPlayer1Card();
-        int valuePlayer2AfterHand1 = game.dealPlayer2Card();
-        int valuePlayer1AfterHand2 = game.dealPlayer1Card();
-        int valuePlayer2AfterHand2 = game.dealPlayer2Card();
+        ArrayList<Card> player1Hand1 = game.dealPlayer1Card();
+        ArrayList<Card> player1Hand2 = game.dealPlayer1Card();
 
         lastCardSuitPlayer1 = game.getplayer1DealtCardSuit();
-        lastCardSuitPlayer2 = game.getplayer2DealtCardSuit();
-
         System.out.println("Last card suit dealt to Player1: " +lastCardSuitPlayer1);
+
+        int player1HandNewValue = game.getPlayer1HandNewValue();
+
+        ArrayList<Card> player2Hand1 = game.dealPlayer2Card();
+        ArrayList<Card> player2Hand2 = game.dealPlayer2Card();
+
+        lastCardSuitPlayer2 = game.getplayer2DealtCardSuit();
         System.out.println("Last card suit dealt to Player2: " +lastCardSuitPlayer2);
 
-        String resultMessage = game.getResult(valuePlayer1AfterHand2, valuePlayer2AfterHand2);
-        int getPlayer1HandSize = game.getPlayer1HandSize();
-//        System.out.println("Player1 hand size is: " +game.getPlayer1HandSize());
+        int player2HandNewValue = game.getPlayer2HandNewValue();
+
+        String resultMessage = game.getResult(player1HandNewValue, player2HandNewValue);
         System.out.println("Outcome: " +resultMessage);
         assertNotNull(resultMessage);
     }

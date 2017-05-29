@@ -26,7 +26,7 @@ public class Hand {
         this.handSize = handSize;
     }
 
-    public void buildHand() {
+    public ArrayList<Card> buildHand() {
         System.out.println("****** Adding card to hand *******");
         this.handValue = 0;
         Card newCard = deck.dealRandomCard();
@@ -37,6 +37,7 @@ public class Hand {
             this.cardValue = card.getValue(rank);
             this.handValue = this.handValue + this.cardValue;
         }
+        return cardsInHand;
     }
 
     public Suit getCardSuit() {
