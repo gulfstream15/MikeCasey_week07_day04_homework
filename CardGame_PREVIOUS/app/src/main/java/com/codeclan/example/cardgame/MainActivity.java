@@ -1,9 +1,11 @@
 package com.codeclan.example.cardgame;
 
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -47,6 +49,14 @@ public class MainActivity extends AppCompatActivity {
     TextView textResult;
     Button buttonGameResult;
 
+    ImageView player1FirstCardImage;
+    ImageView player1SecondCardImage;
+    ImageView player1ThirdCardImage;
+
+    ImageView player2FirstCardImage;
+    ImageView player2SecondCardImage;
+    ImageView player2ThirdCardImage;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,8 +65,16 @@ public class MainActivity extends AppCompatActivity {
         buttonPlayer1 = (Button) findViewById(R.id.buttonPlayer1);
         textPlayer1LatestCard = (TextView) findViewById(R.id.player1Choice);
 
+        player1FirstCardImage = (ImageView) findViewById(R.id.player1FirstCard);
+        player1SecondCardImage = (ImageView) findViewById(R.id.player1SecondCard);
+        player1ThirdCardImage = (ImageView) findViewById(R.id.player1ThirdCard);
+
         buttonPlayer2 = (Button) findViewById(R.id.buttonPlayer2);
         textPlayer2LatestCard = (TextView) findViewById(R.id.player2Choice);
+
+        player2FirstCardImage = (ImageView) findViewById(R.id.player2FirstCard);
+        player2SecondCardImage = (ImageView) findViewById(R.id.player2SecondCard);
+        player2ThirdCardImage = (ImageView) findViewById(R.id.player2ThirdCard);
 
         buttonGameResult = (Button) findViewById(R.id.buttonResult);
         textResult = (TextView) findViewById(R.id.gameResult);
@@ -66,6 +84,14 @@ public class MainActivity extends AppCompatActivity {
     public void onPlayer1ButtonClick(View view) {
         hand1Details = new ArrayList<String>();
         Player1AllIcons = new ArrayList<String>();
+
+        ArrayList<ImageView> player1CardIconImageViews = new ArrayList<>();
+        player1CardIconImageViews.add(player1FirstCardImage);
+        player1CardIconImageViews.add(player1SecondCardImage);
+        player1CardIconImageViews.add(player1ThirdCardImage);
+        int imageViewIndex = 0;
+
+        if(player1Hand != null && player1Hand.size() == 3) return;
 
         player1Hand = game.dealPlayer1Card();
         player1DealtCardRank = game.getplayer1DealtCardRank();
@@ -81,6 +107,10 @@ public class MainActivity extends AppCompatActivity {
 
             player1CardDetails = rank + " of " + suit;
             player1EachIcon = card.getCardIcon(player1CardDetails);
+
+            setCardImage(player1EachIcon, player1CardIconImageViews.get(imageViewIndex));
+            imageViewIndex++;
+
             Player1AllIcons.add(player1EachIcon);
             hand1Details.add(player1CardDetails);
         }
@@ -137,6 +167,12 @@ public class MainActivity extends AppCompatActivity {
         player2HandNewValue = game.getPlayer2HandNewValue();
         String outcome = game.getResult(player1HandNewValue, player2HandNewValue);
         textResult.setText("Outcome: " + outcome + " Hand Value Player1: " + player1HandNewValue + " Hand Value Player2: " + player2HandNewValue);
+    }
+
+    public void setCardImage(String card, ImageView imageView) {
+        //card param example= "ace_of_spades"
+        int imageId = getResources().getIdentifier(card, "drawable", getPackageName());
+        imageView.setImageResource(imageId);
     }
 
 }
