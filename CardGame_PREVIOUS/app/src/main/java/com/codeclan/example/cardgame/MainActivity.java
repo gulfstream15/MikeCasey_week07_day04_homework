@@ -34,8 +34,14 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<String> hand1Details;
     private ArrayList<String> hand2Details;
 
+//    private ArrayList<String> hand1Icons;
+//    private ArrayList<String> hand2Icons;
+
     private String player1CardDetails;
+//    private String player1Icon;
+
     private String player2CardDetails;
+//    private String player2Icon;
 
     TextView textPlayer1LatestCard;
     Button buttonPlayer1;
@@ -77,12 +83,18 @@ public class MainActivity extends AppCompatActivity {
             // System.out.println("Value of card already in hand is: "+ cardValue);
 
             player1CardDetails = rank + " of " + suit;
+            // player1Icon = image.getCardIcon(player1CardDetails);
+            // hand1Icons.add(player1Icon);
             hand1Details.add(player1CardDetails);
         }
 
         for (String player1Card: hand1Details) {
             System.out.println("Player 1 card in hand is: "+player1Card);
         }
+
+//        for (String icon: hand1Icons) {
+//            System.out.println("Player 1 icon in hand is: "+icon);
+//        }
 
         textPlayer1LatestCard.setText("Player1 Last Card was: " + player1DealtCardRank + " of " + player1DealtCardSuit);
         textPlayer1LatestCard.setText("Player 1 hand details are: " + hand1Details);

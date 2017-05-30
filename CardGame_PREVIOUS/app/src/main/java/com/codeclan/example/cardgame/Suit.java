@@ -5,8 +5,8 @@ package com.codeclan.example.cardgame;
  */
 
 public enum Suit {
-    HEARTS,
-    CLUBS,
-    DIAMONDS,
+//    HEARTS,
+//    CLUBS,
+//    DIAMONDS,
     SPADES
 }
