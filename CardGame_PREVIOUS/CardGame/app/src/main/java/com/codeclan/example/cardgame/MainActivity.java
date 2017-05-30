@@ -52,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
     ImageView player1FirstCardImage;
     ImageView player1SecondCardImage;
     ImageView player1ThirdCardImage;
-    ImageView player1FourthCardImage;
 
     ImageView player2FirstCardImage;
     ImageView player2SecondCardImage;
@@ -69,7 +68,6 @@ public class MainActivity extends AppCompatActivity {
         player1FirstCardImage = (ImageView) findViewById(R.id.player1FirstCard);
         player1SecondCardImage = (ImageView) findViewById(R.id.player1SecondCard);
         player1ThirdCardImage = (ImageView) findViewById(R.id.player1ThirdCard);
-        player1FourthCardImage = (ImageView) findViewById(R.id.player1FourthCard);
 
         buttonPlayer2 = (Button) findViewById(R.id.buttonPlayer2);
         textPlayer2LatestCard = (TextView) findViewById(R.id.player2Choice);
@@ -91,11 +89,9 @@ public class MainActivity extends AppCompatActivity {
         player1CardIconImageViews.add(player1FirstCardImage);
         player1CardIconImageViews.add(player1SecondCardImage);
         player1CardIconImageViews.add(player1ThirdCardImage);
-        player1CardIconImageViews.add(player1FourthCardImage);
-
         int imageViewIndex = 0;
 
-        if(player1Hand != null && player1Hand.size() == 4) return;
+        if(player1Hand != null && player1Hand.size() == 3) return;
 
         player1Hand = game.dealPlayer1Card();
         player1DealtCardRank = game.getplayer1DealtCardRank();

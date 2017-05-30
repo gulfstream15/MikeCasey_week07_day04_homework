@@ -89,53 +89,68 @@
 
     <ImageView
         android:id="@+id/player1FirstCard"
-        android:layout_width="80dp"
-        android:layout_height="100dp"
-        android:layout_marginBottom="100dp"
-        android:layout_marginLeft="16dp"
+        android:layout_width="90dp"
+        android:layout_height="110dp"
+        android:layout_marginBottom="120dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
-        android:background="@android:color/transparent"
+        android:background="@android:color/holo_blue_bright"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.118"
         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.28"
-        app:srcCompat="@android:color/transparent" />
+        app:layout_constraintVertical_bias="0.278"
+        app:srcCompat="@android:color/holo_blue_bright" />
 
     <ImageView
         android:id="@+id/player1SecondCard"
-        android:layout_width="80dp"
-        android:layout_height="100dp"
-        android:layout_marginBottom="100dp"
-        android:layout_marginLeft="16dp"
+        android:layout_width="90dp"
+        android:layout_height="110dp"
+        android:layout_marginBottom="120dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
-        android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.111"
         app:layout_constraintLeft_toRightOf="@+id/player1FirstCard"
+        app:layout_constraintRight_toLeftOf="@+id/player1ThirdCard"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.28"
-        app:srcCompat="@android:color/transparent" />
+        app:layout_constraintVertical_bias="0.278"
+        app:srcCompat="@android:color/holo_blue_bright" />
 
     <TextView
         android:id="@+id/player1Choice"
         android:layout_width="261dp"
         android:layout_height="66dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:text="@string/player1_choice_text"
-        tools:layout_editor_absoluteY="92dp"
-        tools:layout_editor_absoluteX="62dp" />
+        app:layout_constraintBottom_toTopOf="@+id/buttonPlayer2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintTop_toBottomOf="@+id/buttonPlayer1" />
 
     <ImageView
         android:id="@+id/player1ThirdCard"
-        android:layout_width="80dp"
-        android:layout_height="100dp"
-        android:layout_marginBottom="100dp"
-        android:layout_marginLeft="16dp"
+        android:layout_width="90dp"
+        android:layout_height="110dp"
+        android:layout_marginBottom="120dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
-        android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/player1SecondCard"
+        app:layout_constraintHorizontal_bias="0.856"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.28"
-        app:srcCompat="@android:color/transparent" />
+        app:layout_constraintVertical_bias="0.278"
+        app:srcCompat="@android:color/holo_blue_bright" />
 
     <ImageView
         android:id="@+id/player2FirstCard"
@@ -145,14 +160,13 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
-        android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/player2SecondCard"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.694"
-        app:srcCompat="@android:color/transparent" />
+        app:srcCompat="@android:color/holo_green_light" />
 
     <ImageView
         android:id="@+id/player2SecondCard"
@@ -162,13 +176,12 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
-        android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.694"
-        app:srcCompat="@android:color/transparent" />
+        app:srcCompat="@android:color/holo_green_light" />
 
     <ImageView
         android:id="@+id/player2ThirdCard"
@@ -178,28 +191,12 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
-        android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.722"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.693"
-        app:srcCompat="@android:color/transparent" />
-
-    <ImageView
-        android:id="@+id/player1FourthCard"
-        android:layout_width="80dp"
-        android:layout_height="100dp"
-        android:layout_marginBottom="100dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/player1ThirdCard"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.28"
-        app:srcCompat="@android:color/transparent" />
+        app:srcCompat="@android:color/holo_green_light" />
 
 </android.support.constraint.ConstraintLayout>
