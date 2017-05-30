@@ -49,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
     TextView textResult;
     Button buttonGameResult;
 
+    Button buttonAnotherPlay;
+
     ImageView player1FirstCardImage;
     ImageView player1SecondCardImage;
     ImageView player1ThirdCardImage;
@@ -82,6 +84,8 @@ public class MainActivity extends AppCompatActivity {
 
         buttonGameResult = (Button) findViewById(R.id.buttonResult);
         textResult = (TextView) findViewById(R.id.gameResult);
+
+        buttonAnotherPlay = (Button) findViewById(R.id.buttonPlayAgain);
 
     }
 
@@ -193,6 +197,13 @@ public class MainActivity extends AppCompatActivity {
         // textResult.setText("Outcome: " + outcome + " Hand Value Player1: " + player1HandNewValue + " Hand Value Player2: " + player2HandNewValue);
         textResult.setText(outcome);
 
+    }
+
+    public void onPlayAgainButtonClick(View view) {
+        ArrayList<Card> player1Hand = new ArrayList<Card>();
+        ArrayList<Card> player2Hand = new ArrayList<Card>();
+        ArrayList<ImageView> player1CardIconImageViews = new ArrayList<>();
+        ArrayList<ImageView> player2CardIconImageViews = new ArrayList<>();
     }
 
     public void setCardImage(String card, ImageView imageView) {

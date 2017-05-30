@@ -16,4 +16,5 @@
     <string name="player2_choice_text"></string>
     <string name="button_result">Get Result</string>
     <string name="game_result_text"></string>
+    <string name="button_play_again">Play Again</string>
 </resources>

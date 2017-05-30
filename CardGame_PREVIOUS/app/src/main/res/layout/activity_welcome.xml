@@ -8,49 +8,50 @@
 
     <TextView
         android:id="@+id/welcomeText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="257dp"
+        android:layout_height="53dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="20dp"
         android:fontFamily="serif"
         android:text="@string/welcome_text"
+        android:textAlignment="center"
         android:textColor="@android:color/holo_red_light"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.248" />
+        app:layout_constraintVertical_bias="0.227" />
 
     <TextView
         android:id="@+id/rulesText"
-        android:layout_width="271dp"
-        android:layout_height="119dp"
-        android:layout_marginBottom="22dp"
+        android:layout_width="336dp"
+        android:layout_height="142dp"
+        android:layout_marginBottom="10dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
+        android:layout_marginTop="200dp"
         android:fontFamily="cursive"
         android:text="@string/rules_text"
-        android:textAlignment="center"
+        android:textAlignment="viewStart"
         android:textColor="@android:color/black"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/enterButton"
-        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/welcomeText"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.454"
+        tools:layout_editor_absoluteY="219dp" />
 
     <Button
         android:id="@+id/enterButton"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="126dp"
+        android:layout_marginBottom="20dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:onClick="onUserEnterButtonClick"
@@ -58,7 +59,10 @@
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="300dp"
+        app:layout_constraintVertical_bias="0.502" />
 
     <ImageView
         android:id="@+id/queenTL"
@@ -74,7 +78,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/queen_of_hearts2" />
+        app:srcCompat="@drawable/queen_of_hearts" />
 
     <ImageView
         android:id="@+id/queenBL"
@@ -87,7 +91,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/queenTL"
         app:layout_constraintVertical_bias="0.971"
-        app:srcCompat="@drawable/queen_of_clubs2" />
+        app:srcCompat="@drawable/queen_of_clubs" />
 
     <ImageView
         android:id="@+id/eightTR"
@@ -120,10 +124,18 @@
 
     <TextView
         android:id="@+id/rulesTitle"
-        android:layout_width="238dp"
-        android:layout_height="18dp"
-        android:layout_marginBottom="7dp"
+        android:layout_width="234dp"
+        android:layout_height="26dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
         android:text="@string/rules_title"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/rulesText"
-        tools:layout_editor_absoluteX="73dp" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeText" />
 </android.support.constraint.ConstraintLayout>
