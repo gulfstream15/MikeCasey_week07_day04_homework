@@ -176,11 +176,11 @@ public class Game {
         System.out.println(player2.getName() + "'s hand value is:" +player2HandNewValue);
         result = rule.getResult(player1HandNewValue, player2HandNewValue);
         if (result.equals("Player1")) {
-            resultMessage = "Winner: " + player1.getName();
+            resultMessage = player1.getName() + " is the winner!!!";
         } else if (result.equals("Player2")) {
-            resultMessage = "Winner: " + player2.getName();
+            resultMessage = player2.getName() + " is the winner!!!";
         } else {
-            resultMessage = "It's a draw";
+            resultMessage = "It's a draw!!!";
         }
         return resultMessage;
     }

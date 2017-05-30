@@ -1,8 +1,13 @@
 <resources>
-    <string name="app_name">Card Game</string>
-    <string name="welcome_text">Welcome to card game!</string>
-    <string name="rules_text">Here are the rules:</string>
-    <string name="enter_button">Play</string>
+    <string name="app_name">Highest Hand Card Game</string>
+    <string name="welcome_text">Welcome to the highest hand card game</string>
+    <string name="rules_title">The rules of the house are:</string>
+    <string name="rules_text">
+        \n 1. First rule
+        \n 2. Second Rule
+        \n 3. Third Rule
+    </string>
+    <string name="enter_button">Enter the Game</string>
     <string name="button_player1">Deal to Player1</string>
     <string name="button_player2">Deal to Player2</string>
     <string name="player1_choice_text"></string>

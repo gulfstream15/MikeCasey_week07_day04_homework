@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView player2FirstCardImage;
     ImageView player2SecondCardImage;
     ImageView player2ThirdCardImage;
+    ImageView player2FourthCardImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
         player2FirstCardImage = (ImageView) findViewById(R.id.player2FirstCard);
         player2SecondCardImage = (ImageView) findViewById(R.id.player2SecondCard);
         player2ThirdCardImage = (ImageView) findViewById(R.id.player2ThirdCard);
+        player2FourthCardImage = (ImageView) findViewById(R.id.player2FourthCard);
 
         buttonGameResult = (Button) findViewById(R.id.buttonResult);
         textResult = (TextView) findViewById(R.id.gameResult);
@@ -139,10 +141,11 @@ public class MainActivity extends AppCompatActivity {
         player2CardIconImageViews.add(player2FirstCardImage);
         player2CardIconImageViews.add(player2SecondCardImage);
         player2CardIconImageViews.add(player2ThirdCardImage);
+        player2CardIconImageViews.add(player2FourthCardImage);
 
         int imageViewIndex = 0;
 
-        if(player2Hand != null && player2Hand.size() == 3) return;
+        if(player2Hand != null && player2Hand.size() == 4) return;
 
         player2Hand = game.dealPlayer2Card();
         player2DealtCardRank = game.getplayer2DealtCardRank();
@@ -183,8 +186,12 @@ public class MainActivity extends AppCompatActivity {
         player1HandNewValue = game.getPlayer1HandNewValue();
         player2HandNewValue = game.getPlayer2HandNewValue();
         String outcome = game.getResult(player1HandNewValue, player2HandNewValue);
+        System.out.println("player1HandNewValue is: "+player1HandNewValue);
+        System.out.println("player2HandNewValue is: "+player2HandNewValue);
+        System.out.println("outcome is: "+outcome);
+
         // textResult.setText("Outcome: " + outcome + " Hand Value Player1: " + player1HandNewValue + " Hand Value Player2: " + player2HandNewValue);
-        textResult.setText("Outcome: " + outcome + " Hand Value Player1: " + player1HandNewValue + " Hand Value Player2: " + player2HandNewValue);
+        textResult.setText(outcome);
 
     }
 
