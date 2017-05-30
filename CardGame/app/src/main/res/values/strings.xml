@@ -3,8 +3,8 @@
     <string name="welcome_text">Welcome to card game!</string>
     <string name="rules_text">Here are the rules:</string>
     <string name="enter_button">Play</string>
-    <string name="button_player1">Get Card Player1</string>
-    <string name="button_player2">Get Card Player2</string>
+    <string name="button_player1">Deal to Player1</string>
+    <string name="button_player2">Deal to Player2</string>
     <string name="player1_choice_text"></string>
     <string name="player2_choice_text"></string>
     <string name="button_result">Get Result</string>

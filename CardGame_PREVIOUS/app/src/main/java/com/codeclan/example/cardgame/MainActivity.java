@@ -20,28 +20,23 @@ public class MainActivity extends AppCompatActivity {
 
     private Suit player1DealtCardSuit;
     private Rank player1DealtCardRank;
-    private Suit player2DealtCardSuit;
-    private Rank player2DealtCardRank;
-
     private int player1HandOldValue;
     private int player1HandNewValue;
+    private ArrayList<Card> player1Hand;
+    private ArrayList<String> hand1Details;
+    private String player1CardDetails;
+    private String player1EachIcon;
+    private ArrayList<String> Player1AllIcons;
+
+    private Suit player2DealtCardSuit;
+    private Rank player2DealtCardRank;
     private int player2HandOldValue;
     private int player2HandNewValue;
-
-    private ArrayList<Card> player1Hand;
     private ArrayList<Card> player2Hand;
-
-    private ArrayList<String> hand1Details;
     private ArrayList<String> hand2Details;
-
-//    private ArrayList<String> hand1Icons;
-//    private ArrayList<String> hand2Icons;
-
-    private String player1CardDetails;
-//    private String player1Icon;
-
     private String player2CardDetails;
-//    private String player2Icon;
+    private String player2EachIcon;
+    private ArrayList<String> Player2AllIcons;
 
     TextView textPlayer1LatestCard;
     Button buttonPlayer1;
@@ -70,6 +65,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void onPlayer1ButtonClick(View view) {
         hand1Details = new ArrayList<String>();
+        Player1AllIcons = new ArrayList<String>();
+
         player1Hand = game.dealPlayer1Card();
         player1DealtCardRank = game.getplayer1DealtCardRank();
         player1DealtCardSuit = game.getplayer1DealtCardSuit();
@@ -83,8 +80,8 @@ public class MainActivity extends AppCompatActivity {
             // System.out.println("Value of card already in hand is: "+ cardValue);
 
             player1CardDetails = rank + " of " + suit;
-            // player1Icon = image.getCardIcon(player1CardDetails);
-            // hand1Icons.add(player1Icon);
+            player1EachIcon = card.getCardIcon(player1CardDetails);
+            Player1AllIcons.add(player1EachIcon);
             hand1Details.add(player1CardDetails);
         }
 
@@ -92,9 +89,9 @@ public class MainActivity extends AppCompatActivity {
             System.out.println("Player 1 card in hand is: "+player1Card);
         }
 
-//        for (String icon: hand1Icons) {
-//            System.out.println("Player 1 icon in hand is: "+icon);
-//        }
+        for (String icon: Player1AllIcons) {
+            System.out.println("Player 1 icon in hand is: "+icon);
+        }
 
         textPlayer1LatestCard.setText("Player1 Last Card was: " + player1DealtCardRank + " of " + player1DealtCardSuit);
         textPlayer1LatestCard.setText("Player 1 hand details are: " + hand1Details);
@@ -102,6 +99,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void onPlayer2ButtonClick(View view) {
         hand2Details = new ArrayList<String>();
+        Player2AllIcons = new ArrayList<String>();
+
         player2Hand = game.dealPlayer2Card();
         player2DealtCardRank = game.getplayer2DealtCardRank();
         player2DealtCardSuit = game.getplayer2DealtCardSuit();
@@ -115,12 +114,17 @@ public class MainActivity extends AppCompatActivity {
             // System.out.println("Value of card already in hand is: "+ cardValue);
 
             player2CardDetails = rank + " of " + suit;
-
+            player2EachIcon = card.getCardIcon(player2CardDetails);
+            Player2AllIcons.add(player2EachIcon);
             hand2Details.add(player2CardDetails);
         }
 
         for (String player2Card: hand2Details) {
             System.out.println("Player 2 card in hand is: "+player2Card);
+        }
+
+        for (String icon: Player2AllIcons) {
+            System.out.println("Player 2 icon in hand is: "+icon);
         }
 
         // textPlayer2LatestCard.setText("Player2 Last Card was: " + player2DealtCardRank + " of " + player2DealtCardSuit);
