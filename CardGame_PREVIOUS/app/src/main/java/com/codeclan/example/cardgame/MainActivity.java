@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView player1FirstCardImage;
     ImageView player1SecondCardImage;
     ImageView player1ThirdCardImage;
+    ImageView player1FourthCardImage;
 
     ImageView player2FirstCardImage;
     ImageView player2SecondCardImage;
@@ -68,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
         player1FirstCardImage = (ImageView) findViewById(R.id.player1FirstCard);
         player1SecondCardImage = (ImageView) findViewById(R.id.player1SecondCard);
         player1ThirdCardImage = (ImageView) findViewById(R.id.player1ThirdCard);
+        player1FourthCardImage = (ImageView) findViewById(R.id.player1FourthCard);
 
         buttonPlayer2 = (Button) findViewById(R.id.buttonPlayer2);
         textPlayer2LatestCard = (TextView) findViewById(R.id.player2Choice);
@@ -89,9 +91,11 @@ public class MainActivity extends AppCompatActivity {
         player1CardIconImageViews.add(player1FirstCardImage);
         player1CardIconImageViews.add(player1SecondCardImage);
         player1CardIconImageViews.add(player1ThirdCardImage);
+        player1CardIconImageViews.add(player1FourthCardImage);
+
         int imageViewIndex = 0;
 
-        if(player1Hand != null && player1Hand.size() == 3) return;
+        if(player1Hand != null && player1Hand.size() == 4) return;
 
         player1Hand = game.dealPlayer1Card();
         player1DealtCardRank = game.getplayer1DealtCardRank();
@@ -115,21 +119,30 @@ public class MainActivity extends AppCompatActivity {
             hand1Details.add(player1CardDetails);
         }
 
-        for (String player1Card: hand1Details) {
-            System.out.println("Player 1 card in hand is: "+player1Card);
-        }
+//        for (String player1Card: hand1Details) {
+//            System.out.println("Player 1 card in hand is: "+player1Card);
+//        }
+//
+//        for (String icon: Player1AllIcons) {
+//            System.out.println("Player 1 icon in hand is: "+icon);
+//        }
 
-        for (String icon: Player1AllIcons) {
-            System.out.println("Player 1 icon in hand is: "+icon);
-        }
-
-        textPlayer1LatestCard.setText("Player1 Last Card was: " + player1DealtCardRank + " of " + player1DealtCardSuit);
-        textPlayer1LatestCard.setText("Player 1 hand details are: " + hand1Details);
+//        textPlayer1LatestCard.setText("Player1 Last Card was: " + player1DealtCardRank + " of " + player1DealtCardSuit);
+//        textPlayer1LatestCard.setText("Player 1 hand details are: " + hand1Details);
     }
 
     public void onPlayer2ButtonClick(View view) {
         hand2Details = new ArrayList<String>();
         Player2AllIcons = new ArrayList<String>();
+
+        ArrayList<ImageView> player2CardIconImageViews = new ArrayList<>();
+        player2CardIconImageViews.add(player2FirstCardImage);
+        player2CardIconImageViews.add(player2SecondCardImage);
+        player2CardIconImageViews.add(player2ThirdCardImage);
+
+        int imageViewIndex = 0;
+
+        if(player2Hand != null && player2Hand.size() == 3) return;
 
         player2Hand = game.dealPlayer2Card();
         player2DealtCardRank = game.getplayer2DealtCardRank();
@@ -145,20 +158,24 @@ public class MainActivity extends AppCompatActivity {
 
             player2CardDetails = rank + " of " + suit;
             player2EachIcon = card.getCardIcon(player2CardDetails);
+
+            setCardImage(player2EachIcon, player2CardIconImageViews.get(imageViewIndex));
+            imageViewIndex++;
+
             Player2AllIcons.add(player2EachIcon);
             hand2Details.add(player2CardDetails);
         }
 
-        for (String player2Card: hand2Details) {
-            System.out.println("Player 2 card in hand is: "+player2Card);
-        }
+//        for (String player2Card: hand2Details) {
+//            System.out.println("Player 2 card in hand is: "+player2Card);
+//        }
+//
+//        for (String icon: Player2AllIcons) {
+//            System.out.println("Player 2 icon in hand is: "+icon);
+//        }
 
-        for (String icon: Player2AllIcons) {
-            System.out.println("Player 2 icon in hand is: "+icon);
-        }
-
-        // textPlayer2LatestCard.setText("Player2 Last Card was: " + player2DealtCardRank + " of " + player2DealtCardSuit);
-        textPlayer2LatestCard.setText("Player 2 hand details are: " + hand2Details);
+//        textPlayer2LatestCard.setText("Player2 Last Card was: " + player2DealtCardRank + " of " + player2DealtCardSuit);
+//        textPlayer2LatestCard.setText("Player 2 hand details are: " + hand2Details);
 
     }
 
@@ -166,7 +183,9 @@ public class MainActivity extends AppCompatActivity {
         player1HandNewValue = game.getPlayer1HandNewValue();
         player2HandNewValue = game.getPlayer2HandNewValue();
         String outcome = game.getResult(player1HandNewValue, player2HandNewValue);
+        // textResult.setText("Outcome: " + outcome + " Hand Value Player1: " + player1HandNewValue + " Hand Value Player2: " + player2HandNewValue);
         textResult.setText("Outcome: " + outcome + " Hand Value Player1: " + player1HandNewValue + " Hand Value Player2: " + player2HandNewValue);
+
     }
 
     public void setCardImage(String card, ImageView imageView) {
