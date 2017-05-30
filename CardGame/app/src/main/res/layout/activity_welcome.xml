@@ -13,7 +13,7 @@
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="60dp"
         android:text="@string/welcome_text"
         android:textColor="@android:color/holo_blue_dark"
         android:textSize="24sp"
@@ -21,7 +21,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.484" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/rulesText"
@@ -30,29 +30,88 @@
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="80dp"
         android:text="@string/rules_text"
         android:textAlignment="center"
         android:textColor="@android:color/background_dark"
         app:layout_constraintBottom_toTopOf="@+id/enterButton"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.501" />
+        app:layout_constraintVertical_bias="0.904" />
 
     <Button
         android:id="@+id/enterButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="84dp"
+        android:layout_marginBottom="126dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:onClick="onUserEnterButtonClick"
         android:text="@string/enter_button"
         android:textColor="@android:color/holo_red_light"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.532"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
+
+    <ImageView
+        android:id="@+id/queenTL"
+        android:layout_width="91dp"
+        android:layout_height="99dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.01"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/queen_of_hearts2" />
+
+    <ImageView
+        android:id="@+id/queenBL"
+        android:layout_width="91dp"
+        android:layout_height="110dp"
+        app:srcCompat="@drawable/queen_of_clubs2"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/queenTL"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintVertical_bias="0.971" />
+
+    <ImageView
+        android:id="@+id/eightTR"
+        android:layout_width="106dp"
+        android:layout_height="96dp"
+        app:srcCompat="@drawable/eight_of_hearts"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintLeft_toRightOf="@+id/queenTL"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.945" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="71dp"
+        android:layout_height="99dp"
+        app:srcCompat="@drawable/ace_of_clubs"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/queenBL"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/eightTR"
+        app:layout_constraintHorizontal_bias="0.903"
+        app:layout_constraintVertical_bias="0.972"
+        tools:layout_editor_absoluteY="396dp"
+        tools:layout_editor_absoluteX="287dp" />
 </android.support.constraint.ConstraintLayout>

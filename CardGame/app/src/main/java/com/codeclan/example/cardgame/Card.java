@@ -7,6 +7,8 @@ package com.codeclan.example.cardgame;
 public class Card {
 
     private int value;
+    private String cardDetails;
+    private String cardIcon;
 
     private Rule rule;
     private Suit suit;
@@ -20,6 +22,8 @@ public class Card {
         this.rank = rank;
         this.value = value;
         this.suit = suit;
+        this.cardDetails = cardDetails;
+        this.cardIcon = cardIcon;
     }
 
     public Rank getRank() {
@@ -46,6 +50,24 @@ public class Card {
 
     public void getSuit(Suit newSuit) {
         this.suit = newSuit;
+    }
+
+    public String getCardIcon(String cardDetails) {
+
+        if (cardDetails.equals("ACE of SPADES")) {
+            cardIcon = "ace_of_spades";
+        } else if (cardDetails.equals("TWO of SPADES")) {
+            cardIcon = "two_of_spades";
+        } else if (cardDetails.equals("THREE of SPADES")) {
+            cardIcon = "three_of_spades";
+        } else if (cardDetails.equals("FOUR of SPADES")) {
+            cardIcon = "four_of_spades";
+        } else if (cardDetails.equals("FIVE of SPADES")) {
+            cardIcon = "five_of_spades";
+        } else if (cardDetails.equals("KING of SPADES")) {
+            cardIcon = "king_of_spades";
+        }
+        return this.cardIcon;
     }
 
 }
