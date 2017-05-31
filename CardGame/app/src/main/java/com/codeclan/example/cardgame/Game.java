@@ -72,32 +72,19 @@ public class Game {
         player1Hand = hand1.buildHand();
         Player player1  = new Player("Player1", hand1);
         player1Name = player1.getName();
-        System.out.println("Player name is:" +player1Name);
 
         player1DealtCardSuit = hand1.getCardSuit();
         player1DealtCardRank = hand1.getCardRank();
 
-        // Debug
-        System.out.println("Suit of card added is: "+player1DealtCardSuit);
-        System.out.println("Rank of card added is: "+player1DealtCardRank);
-        System.out.println("Value of card added is: "+hand1.getCardValue());
-
-        // Debug
         player1Hand = hand1.getCardsInHand();
         for (Card card:player1Hand) {
             Suit suit = card.getSuit();
-            System.out.println("Suit of card already in hand is: "+suit);
             Rank rank = card.getRank();
-            System.out.println("Rank of card already in hand is: "+rank);
             int cardValue = card.getValue(rank);
-            System.out.println("Value of card already in hand is: "+cardValue);
         }
 
         player1HandNewValue = player1HandOldValue + hand1.getCardValue();
         player1HandOldValue = player1HandNewValue;
-
-        // Debug
-        System.out.println("Current value of hand is :" +player1HandNewValue);
 
         return player1Hand;
     }
@@ -122,32 +109,19 @@ public class Game {
         player2Hand = hand2.buildHand();
         Player player2  = new Player("Player2", hand2);
         player2Name = player2.getName();
-        System.out.println("Player name is:" +player2Name);
 
         player2DealtCardSuit = hand2.getCardSuit();
         player2DealtCardRank = hand2.getCardRank();
 
-        // Debug
-        System.out.println("Suit of card added is: "+player2DealtCardSuit);
-        System.out.println("Rank of card added is: "+player2DealtCardRank);
-        System.out.println("Value of card added is: "+hand2.getCardValue());
-
-        // Debug
         player2Hand = hand2.getCardsInHand();
         for (Card card:player2Hand) {
             Suit suit = card.getSuit();
-            System.out.println("Suit of card already in hand is: "+suit);
             Rank rank = card.getRank();
-            System.out.println("Rank of card already in hand is: "+rank);
             int cardValue = card.getValue(rank);
-            System.out.println("Value of card already in hand is: "+cardValue);
         }
 
         player2HandNewValue = player2HandOldValue + hand2.getCardValue();
         player2HandOldValue = player2HandNewValue;
-
-        // Debug
-        System.out.println("Current value of hand is :" +player2HandNewValue);
 
         return player2Hand;
     }
@@ -169,11 +143,8 @@ public class Game {
     }
 
     public String getResult(int player1HandNewValue, int player2HandNewValue) {
-        System.out.println("****** Result after deals ******");
         player1HandNewValue = getPlayer1HandNewValue();
-        System.out.println(player1.getName() + "'s hand value is:" +player1HandNewValue);
         player2HandNewValue = getPlayer2HandNewValue();
-        System.out.println(player2.getName() + "'s hand value is:" +player2HandNewValue);
         result = rule.getResult(player1HandNewValue, player2HandNewValue);
         if (result.equals("Player1")) {
             resultMessage = player1.getName() + " is the winner!!!";

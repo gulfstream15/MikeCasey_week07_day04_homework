@@ -109,11 +109,8 @@ public class MainActivity extends AppCompatActivity {
 
         for (Card card:player1Hand) {
             Suit suit = card.getSuit();
-            // System.out.println("Suit of card already in hand is: "+suit);
             Rank rank = card.getRank();
-            // System.out.println("Rank of card already in hand is: "+rank);
             int cardValue = card.getValue(rank);
-            // System.out.println("Value of card already in hand is: "+ cardValue);
 
             player1CardDetails = rank + " of " + suit;
             player1EachIcon = card.getCardIcon(player1CardDetails);
@@ -124,17 +121,6 @@ public class MainActivity extends AppCompatActivity {
             Player1AllIcons.add(player1EachIcon);
             hand1Details.add(player1CardDetails);
         }
-
-//        for (String player1Card: hand1Details) {
-//            System.out.println("Player 1 card in hand is: "+player1Card);
-//        }
-//
-//        for (String icon: Player1AllIcons) {
-//            System.out.println("Player 1 icon in hand is: "+icon);
-//        }
-
-//        textPlayer1LatestCard.setText("Player1 Last Card was: " + player1DealtCardRank + " of " + player1DealtCardSuit);
-//        textPlayer1LatestCard.setText("Player 1 hand details are: " + hand1Details);
     }
 
     public void onPlayer2ButtonClick(View view) {
@@ -157,11 +143,8 @@ public class MainActivity extends AppCompatActivity {
 
         for (Card card:player2Hand) {
             Suit suit = card.getSuit();
-            // System.out.println("Suit of card already in hand is: "+suit);
             Rank rank = card.getRank();
-            // System.out.println("Rank of card already in hand is: "+rank);
             int cardValue = card.getValue(rank);
-            // System.out.println("Value of card already in hand is: "+ cardValue);
 
             player2CardDetails = rank + " of " + suit;
             player2EachIcon = card.getCardIcon(player2CardDetails);
@@ -172,29 +155,12 @@ public class MainActivity extends AppCompatActivity {
             Player2AllIcons.add(player2EachIcon);
             hand2Details.add(player2CardDetails);
         }
-
-//        for (String player2Card: hand2Details) {
-//            System.out.println("Player 2 card in hand is: "+player2Card);
-//        }
-//
-//        for (String icon: Player2AllIcons) {
-//            System.out.println("Player 2 icon in hand is: "+icon);
-//        }
-
-//        textPlayer2LatestCard.setText("Player2 Last Card was: " + player2DealtCardRank + " of " + player2DealtCardSuit);
-//        textPlayer2LatestCard.setText("Player 2 hand details are: " + hand2Details);
-
     }
 
     public void onResultButtonClick(View view) {
         player1HandNewValue = game.getPlayer1HandNewValue();
         player2HandNewValue = game.getPlayer2HandNewValue();
         String outcome = game.getResult(player1HandNewValue, player2HandNewValue);
-        System.out.println("player1HandNewValue is: "+player1HandNewValue);
-        System.out.println("player2HandNewValue is: "+player2HandNewValue);
-        System.out.println("outcome is: "+outcome);
-
-        // textResult.setText("Outcome: " + outcome + " Hand Value Player1: " + player1HandNewValue + " Hand Value Player2: " + player2HandNewValue);
         textResult.setText(outcome);
 
     }

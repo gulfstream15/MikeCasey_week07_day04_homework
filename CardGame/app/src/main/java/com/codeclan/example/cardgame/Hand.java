@@ -27,7 +27,6 @@ public class Hand {
     }
 
     public ArrayList<Card> buildHand() {
-        System.out.println("****** Adding card to hand *******");
         this.handValue = 0;
         Card newCard = deck.dealRandomCard();
         this.cardsInHand.add(newCard);

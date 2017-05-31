@@ -76,7 +76,6 @@ public class GameTest {
         ArrayList<Card> player1Hand2 = game.dealPlayer1Card();
 
         lastCardSuitPlayer1 = game.getplayer1DealtCardSuit();
-        System.out.println("Last card suit dealt to Player1: " +lastCardSuitPlayer1);
 
         int player1HandNewValue = game.getPlayer1HandNewValue();
 
@@ -84,12 +83,11 @@ public class GameTest {
         ArrayList<Card> player2Hand2 = game.dealPlayer2Card();
 
         lastCardSuitPlayer2 = game.getplayer2DealtCardSuit();
-        System.out.println("Last card suit dealt to Player2: " +lastCardSuitPlayer2);
 
         int player2HandNewValue = game.getPlayer2HandNewValue();
 
         String resultMessage = game.getResult(player1HandNewValue, player2HandNewValue);
-        System.out.println("Outcome: " +resultMessage);
+
         assertNotNull(resultMessage);
     }
 
